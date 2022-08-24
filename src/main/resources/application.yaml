@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: @project.name@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics, prometheus
+  endpoint:
+    prometheus:
+      enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
+springdoc:
+  swagger-ui:
+    config-url: /api/v3/api-docs/swagger-config
+    disable-swagger-default-url: true
+    url: /api/v3/api-docs
